@@ -1,0 +1,11 @@
+<%= turbo_stream.update 'result_frame' do %>
+  <div style="margin-top: 1em; padding: 1em; border: 1px solid #ccc; background-color: #f9f9f9;">
+    <% if @result.success? %>
+      <strong>Output:</strong>
+      <pre><%= @result.result %></pre>
+    <% else %>
+      <strong style="color: red;">Error:</strong>
+      <pre><%= @result.error %></pre>
+    <% end %>
+  </div>
+<% end %>

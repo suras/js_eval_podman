@@ -1,0 +1,12 @@
+<h1>JavaScript Runner</h1>
+<%= form_with url: nodevm_index_path(format: :turbo_stream), method: :post, data: { turbo_frame: 'result_frame' } do |form| %>
+  <div>
+    <%= form.text_area :code, rows: 6, cols: 80, placeholder: "Type JavaScript here...", id: 'js-code-input' %>
+  </div>
+  <div>
+    <%= form.submit "Run JS" %>
+  </div>
+<% end %>
+<%= turbo_frame_tag 'result_frame' do %>
+  <!-- Result content will be replaced here -->
+<% end %>
