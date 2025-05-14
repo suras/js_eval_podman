@@ -1,5 +1,5 @@
 {
-  "defaultAction": "SCMP_ACT_ERRNO",
+  "defaultAction": "SCMP_ACT_ALLOW",
   "architectures": [
     "SCMP_ARCH_X86_64",
     "SCMP_ARCH_X86",
@@ -8,15 +8,14 @@
   "syscalls": [
     {
       "names": [
-        "access", "arch_prctl", "brk", "capget", "close", "dup", "epoll_create1", "epoll_ctl",
-        "epoll_wait", "exit", "exit_group", "fcntl", "fstat", "futex", "getcwd", "getdents64",
-        "getegid", "geteuid", "getgid", "getpid", "getppid", "getuid", "ioctl", "lseek",
-        "mmap", "mprotect", "munmap", "nanosleep", "openat", "pipe2", "poll", "prctl",
-        "pread64", "read", "readlink", "rt_sigaction", "rt_sigprocmask", "sched_getaffinity",
-        "sched_yield", "set_robust_list", "set_tid_address", "sigaltstack", "stat", "statfs",
-        "sysinfo", "uname", "write"
+        "chmod", "fchmod", "fchmodat", "setuid", "setgid", "setgroups",
+        "setresgid", "setresuid", "mount", "umount2", "reboot", "name_to_handle_at",
+        "unshare", "keyctl", "kexec_load", "open_by_handle_at", "init_module",
+        "finit_module", "delete_module", "pivot_root", "quotactl", "acct", "prlimit64",
+        "capset", "sethostname", "setdomainname", "ptrace", "personality", "setrlimit",
+        "process_vm_readv", "process_vm_writev", "chroot"
       ],
-      "action": "SCMP_ACT_ALLOW"
+      "action": "SCMP_ACT_ERRNO"
     }
   ]
 }

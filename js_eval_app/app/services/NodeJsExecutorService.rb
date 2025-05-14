@@ -22,6 +22,9 @@ class NodeJsExecutorService
             "--security-opt", "seccomp=#{SECCOMP_PATH}",           
             "--security-opt=no-new-privileges",
             "--env", "NODE_OPTIONS=--unhandled-rejections=strict",
+            "--ulimit", "nproc=50:50", 
+            "--ulimit", "nofile=64:64",
+            "--ulimit", "core=0:0",
             "--user", "65534:65534",
             PODMAN_IMAGE
       ]
